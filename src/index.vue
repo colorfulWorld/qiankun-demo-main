@@ -9,7 +9,7 @@
             @click="() => (collapsed = !collapsed)"
             :style="{ color: '#fff', fontSize: '24px' }"
           />
-          <span class="system-name margin-left-20">FMS-智能车队管理系统-运营平台</span>
+          <span class="system-name margin-left-20">just for fun</span>
         </a-row>
 
         <a-dropdown>

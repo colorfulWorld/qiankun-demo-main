@@ -8,15 +8,15 @@ const assetsCDN = {
     vue: 'Vue',
     'vue-router': 'VueRouter',
     vuex: 'Vuex',
-    axios: 'axios',
-  },
+    axios: 'axios'
+  }
 }
 
 module.exports = {
   assetsDir: 'static',
   publicPath: '/',
-  chainWebpack: (config) => {
-    config.plugin('define').tap((args) => {
+  chainWebpack: config => {
+    config.plugin('define').tap(args => {
       args[0]['process.env'] = env
       return args
     })
@@ -26,31 +26,31 @@ module.exports = {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        views: path.resolve(__dirname, 'src/views'),
-      },
+        views: path.resolve(__dirname, 'src/views')
+      }
     },
     output: {
       library: `${packageName}-[name]`,
       libraryTarget: 'umd',
-      jsonpFunction: `webpackJsonp_${packageName}`,
-    },
+      jsonpFunction: `webpackJsonp_${packageName}`
+    }
   },
   devServer: {
     port: 80,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': '*'
     },
     proxy: {
       '/api': {
         target: '',
         ws: false,
-        changeOrigin: true,
+        changeOrigin: true
       },
       '/bgs': {
         target: '',
         ws: false,
-        changeOrigin: true,
-      },
-    },
-  },
+        changeOrigin: true
+      }
+    }
+  }
 }

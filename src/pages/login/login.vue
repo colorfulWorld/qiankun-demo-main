@@ -1,13 +1,13 @@
 <template>
   <div class="main login-page">
-    <div class="logo-pic">FMS-智能车队管理系统-运营平台</div>
+    <div class="logo-pic">just for fun</div>
     <a-form id="formLogin" class="user-layout-login" ref="formLogin" :form="form" @submit="handleSubmit">
       <a-row class="login-page-title">登录账户</a-row>
       <a-form-item>
         <a-input
           size="large"
           type="text"
-          placeholder="账户"
+          placeholder="账户:没校验"
           v-decorator="['username', { rules: [{ required: true, message: '请输入账户' }], validateTrigger: 'blur' }]"
         >
           <a-icon slot="prefix" type="user" :style="{ color: 'rgba(0,0,0,.25)' }" />
@@ -19,7 +19,7 @@
           size="large"
           type="password"
           autocomplete="false"
-          placeholder="密码"
+          placeholder="密码:没校验"
           v-decorator="['password', { rules: [{ required: true, message: '请输入密码' }], validateTrigger: 'blur' }]"
         >
           <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }" />
@@ -130,11 +130,11 @@ export default {
     font-size: 30px;
     color: #fff;
     padding-left: 99px;
-    background: url("~@/assets/images/logo.png") no-repeat 0;
+    background: url('~@/assets/images/logo.png') no-repeat 0;
   }
-  .login-page-title{
+  .login-page-title {
     text-align: center;
-    padding:30px 0 20px;
+    padding: 30px 0 20px;
     font-size: 32px;
     color: #3569e8;
     font-weight: 700;
